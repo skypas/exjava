@@ -1,0 +1,42 @@
+
+/**
+ * Antud on kaks massiivi õhu temperatuuridega. Arvuta mõlema puhul mitu positiivset temperatuuri
+ * on massiivis rohkem kui negatiivseid.
+ */
+ //http://www.programmersforum.ru/showthread.php?t=228135
+    //http://developer.alexanderklimov.ru/android/java/array.php
+//skleivaem dva massiva
+public class main {
+    private static int[] concatArray(int[] a, int[] b) {
+        if (a == null)
+            return b;
+        if (b == null)
+            return a;
+        int[] r = new int[a.length + b.length];
+        System.arraycopy(a, 0, r, 0, a.length);
+        System.arraycopy(b, 0, r, a.length, b.length);
+        return r;
+    }
+    public static void main(String[] args) {
+        int[] kraadid1 = {11, 10, 5, 1, 3, -2, -6, 2, -13, -24, -9, 0};
+        int[] kraadid2 = {-23, -25, -22, -18, -15, -19, -13};
+
+        int[] kraadid = concatArray(kraadid1, kraadid2); // будет возвращён массив kraadid1 i kraadid2
+
+        int negative = 0;
+        long sumpos = 0L;
+        long sumneg = 0L;
+        int positive = 0;
+        int vastus = 0;
+        for (int i : kraadid) {
+            if (i < 0)
+            negative++;
+            if (i > 0)
+                positive++;
+            }
+            vastus = positive - negative;
+            System.out.println("negatiivset temperatuuri: " + negative);
+            System.out.println("positiivset temperatuuri: " + positive);
+            System.out.println("vastus: " + vastus);
+        }
+    }
