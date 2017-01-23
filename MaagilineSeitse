@@ -1,0 +1,86 @@
+/**
+ * Antud on int[] massiiv. Korruta kõik seitsmed kahega ja leia arvude keskmine.
+ */
+public class main {
+
+    public static void main(String[] args) {
+
+        int[] naide = {7, 4, 4, 65, 4, 4, 7, 7, 4};
+        int number = 7;
+        int two = 2;
+        int sum3=0;
+        int sumcount = 0;
+        int average = 0;
+
+        for (int i = 0; i < naide.length; i++) {
+
+            int sum = 0;
+            int count = 0;
+
+            if (naide[i] == number) {
+                // do your stuff
+                sum = naide[i]*two;
+                count++;
+                System.out.println("ok"+ naide[i]*two );
+            }
+            else {}
+            sum3 = sum3 + sum;
+            sumcount = sumcount + count;
+            System.out.println("sum3" + sum3);
+            System.out.println("count" + count);
+    }
+
+       // System.out.println(sum3);
+       // System.out.println(sumcount);
+        average = sum3 / sumcount;
+        System.out.println("vastus " + average);
+    }
+}
+
+
+
+//correct variant bottom
+//<><>><><
+import java.util.ArrayList;
+
+/**
+ * Antud on int[] massiiv. Korruta kõik seitsmed kahega ja leia arvude keskmine.
+ */
+public class main {
+
+    public static void main(String[] args) {
+
+        int[] naide = {7, 4, 324, 65, 4, 78, 7, 45, 4};
+        ArrayList <Integer> secondarr = new ArrayList<>();
+        int number = 7;
+        int two = 2;
+
+        for (int i = 0; i < naide.length; i++) {
+
+            int sum = 0;
+            int count = 0;
+
+            if (naide[i] == number) {
+                // do your stuff
+                sum = naide[i]*two;
+                secondarr.add(sum);
+                //count++;
+                System.out.println("mult2 "+ naide[i]*two );
+            }
+            else {
+                secondarr.add(naide[i]);
+            }
+        }
+        int l = 0;
+        double sum = 0;
+
+        while (l < secondarr.size()) {
+            sum = sum + secondarr.get(l);
+            l++;
+        }
+        System.out.println(sum);
+
+        double average = sum/secondarr.size();
+        System.out.println(average);
+    }
+}
