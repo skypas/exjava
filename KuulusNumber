@@ -1,0 +1,124 @@
+import java.util.Arrays;
+
+/**
+ * Created by Filip on 17.01.2017.
+ */
+/**
+ * Antud on int[] massiiv. Eemalda kõik nr 3 väärtused ja leia millist numbrit esineb kõige siis rohkem?
+ * Mitte siis number, mis on kolmandal indeksil, vaid nr kolm ise.
+ */
+public class main {
+
+
+    public static void main(String[] args) {
+
+        int[] naide = {1, 5, 3, 3, 6, 3, 7, 7}; // vastus on 7
+        Arrays.sort(naide);
+
+        int count = 0, occur = 0, high = 0, a;
+        for (a = 1; a < naide.length; a++) {
+            if (naide[a - 1] == naide[a]) {
+                count++;
+                if (count > occur) {
+                    occur = count;
+                    high = naide[a];
+                }
+            } else {
+                count = 0;
+            }
+        }
+        System.out.println("highest occurence = " + high);
+    }
+}
+
+
+
+
+
+
+
+/**
+ * Created by Filip on 17.01.2017.
+ */
+/**
+ * Antud on int[] massiiv. Eemalda kõik nr 3 väärtused ja leia millist numbrit esineb kõige siis rohkem?
+ * naitab mitu korda k]ige rohkem number masiivis
+ */
+ public class main {
+
+
+    public static void main(String[] args) {
+
+int[] naide = {1, 5, 6, 7, 7}; // vastus on 7
+
+        int max = 0;
+        for (int i = 0; i < naide.length; i++) {
+            int count = 0;
+            for (int j = 0; j < naide.length; j++) {
+                if (naide[i]==naide[j])
+                    count++;
+            }
+            if (count >= max)
+                max = count;
+        }
+		
+		        System.out.println(max);
+    }
+}
+
+
+
+/**
+ * Created by Filip on 17.01.2017.
+ Naitab k]ige surem number masiivis
+ */
+public class main {
+
+    public static void main(String[] args) {
+
+        int[] naide = {1, 5, 4, 6, 7, 7, 4, 4}; // vastus on 7
+
+        int max = 0;
+        for(int i = 0; i<naide.length; i++){
+            if(max<naide[i]) {
+                max = naide[i];
+            }
+        }
+        System.out.println(max);
+    }
+}
+
+
+//oige???
+/**
+ * Antud on int[] massiiv. Eemalda kõik nr 3 väärtused ja leia millist numbrit esineb kõige siis rohkem?
+ * Mitte siis number, mis on kolmandal indeksil, vaid nr kolm ise.
+ */
+public class KuulusNumber {
+
+    public static void main(String[] args) {
+
+        int[] naide = {1, 5, 3, 3, 6, 3, 7, 7}; // vastus on 7
+        int number =0;
+        int loendur =0;
+        int maxloendur =0;
+        int maxnumber=0;
+        for (int i = 0; i < naide.length; i++) {
+            if (naide[i]!=3){
+                number = naide[i];
+            }
+            for (int j = i; j < naide.length; j++) {
+                if(number == naide[j]){
+                    loendur++;
+                }
+            }
+            if (loendur>maxloendur){
+                maxloendur = loendur;
+                maxnumber = number;
+            }
+            loendur = 0;
+        }
+        System.out.println("Enim esinenud number on "+maxnumber+", teda esines "+maxloendur+" korda.");
+    }
+
+}
